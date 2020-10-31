@@ -1,0 +1,36 @@
+div.root {
+    width: 180px;
+    div.add-list-panel {
+        width: 272px;
+    }
+    div.container-fluid {
+        padding-left: 0px;
+    }
+    .add-list-button:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        background-color: lightgray;
+    }
+    .input-list-title {
+        height: 70px;
+        width: 100%;
+        resize: none;
+    }
+
+    .button-panel {
+        font-size: 20px;
+        padding-left: 10px;
+
+        .plus-circle-icon {
+            color: mediumseagreen;
+        }
+        .plus-circle-icon:hover {
+            color: green;
+            cursor: pointer;
+        }
+
+        .close-icon:hover {
+            cursor: pointer;
+        }
+    }
+}

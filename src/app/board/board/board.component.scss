@@ -1,0 +1,16 @@
+div.root {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    div {
+        margin: 5px;
+    }
+
+    div.list-wrapper {
+        width: 272px;
+    }
+    div.add-list-wrapper {
+        width: 272px;
+    }
+}

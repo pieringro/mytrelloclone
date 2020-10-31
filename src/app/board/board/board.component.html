@@ -1,0 +1,16 @@
+<div class="root">
+
+    <div class="lists" *ngFor="let list of lists$ | async; let i=index;">
+        <div class="list-wrapper" (dragover)="allowDrop($event, i)" (drop)="drop($event, i)">
+            <app-list [listId]="list.id" [list]="list">
+            </app-list>
+        </div>
+    </div>
+
+    <div class="add-new-list">
+        <div class="add-list-wrapper">
+            <app-add-list></app-add-list>
+        </div>
+    </div>
+
+</div>

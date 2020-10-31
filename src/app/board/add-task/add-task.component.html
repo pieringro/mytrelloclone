@@ -1,0 +1,64 @@
+<ng-template #plusSquareIcon>
+    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-square" fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+            d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+        <path fill-rule="evenodd"
+            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+    </svg>
+</ng-template>
+
+<ng-template #plusCircleIcon>
+    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle-fill" fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+    </svg>
+</ng-template>
+
+<ng-template #closeIcon>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" viewBox="0 0 371.23 371.23" style="enable-background:new 0 0 371.23 371.23;"
+        xml:space="preserve">
+        <polygon points="371.23,21.213 350.018,0 185.615,164.402 21.213,0 0,21.213 164.402,185.615 0,350.018 21.213,371.23 
+	185.615,206.828 350.018,371.23 371.23,350.018 206.828,185.615 " />
+    </svg>
+</ng-template>
+
+<div class="root">
+    <div *ngIf="mode=='hide'" class="add-task-button" (click)="addTaskClick()">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-1">
+                    <ng-container *ngTemplateOutlet="plusSquareIcon"></ng-container>
+                </div>
+                <div class="col-10">
+                    <span>
+                        Add Task
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="mode=='expand'" class="add-task-panel">
+        <ng-container [formGroup]="form">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <textarea class="input-task-title" formControlName="name"
+                            placeholder="Enter a title for this task..."></textarea>
+                    </div>
+                </div>
+                <div class="row button-panel">
+                    <div class="col-2 plus-circle-icon" (click)="newTaskClick()">
+                        <ng-container *ngTemplateOutlet="plusCircleIcon"></ng-container>
+                    </div>
+                    <div class="col-2 close-icon" (click)="addTaskClick()">
+                        <ng-container *ngTemplateOutlet="closeIcon"></ng-container>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+div.card {
+    .card-title {
+        margin-top: 0.75rem;
+        margin-left: 0.5rem;
+
+        .list-name {
+            display: inline-block;
+        }
+        .list-name-3dot {
+            display: inline-block;
+            font-size: 15px;
+        }
+    }
+    div.card-footer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.dragging {
+    background-color: gray !important;
+}
