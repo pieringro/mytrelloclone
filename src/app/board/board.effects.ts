@@ -85,6 +85,19 @@ export class BoardEffects {
         { dispatch: false }
     );
 
+    changeListOrder$ = createEffect(() =>
+        this.actions$.pipe(ofType(AppActions.changeListsOrder),
+            tap(action => {
+                const listsStorage: List[] = JSON.parse(localStorage.getItem('lists'));
+                const list: List = listsStorage.find(list => list.id == action.listId);
+                list.seqNum = action.listSeqNum;
+
+                localStorage.setItem('lists', JSON.stringify(listsStorage));
+            })
+        ),
+        { dispatch: false }
+    );
+
 
     private addAnyTaskToList(action) {
         const listsStorage: List[] = JSON.parse(localStorage.getItem('lists'));
